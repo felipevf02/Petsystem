@@ -1,0 +1,34 @@
+{%extends 'base.html'%}
+
+{%block conteudo%}
+<h1 class="mt-5">{{produto.nome}} {{produto.sobrenome}}</h1>
+
+{%if produto.foto%}
+<p>
+    <img src="{{produto.foto.url}}" style="max-width: 250px; height: auto;"
+</p>
+{%endif%}
+
+<dl>
+    <dt>ID</dt>
+    <dd>{{produto.id}}</dd>
+
+    <dt>Telefone</dt>
+    <dd>{{produto.telefone}}</dd>
+
+    <dt>E-mail</dt>
+    <dd>{{produto.email}}</dd>
+
+    <dt>Data criação</dt>
+    <dd>{{produto.data_criacao|date:'d/m/y H:i:s'}}</dd>
+
+    <dt>Categoria</dt>
+    <dd>{{produto.categoria}}</dd>
+
+    <dt>Descrição</dt>
+    <dd>
+        {{produto.descricao}}
+    </dd>
+</dl>
+{%endblock%}
+      

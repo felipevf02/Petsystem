@@ -7,22 +7,22 @@
     <thead>
     <tr>
         <th>ID</th>
-        <th>Nome</th>
-        <th>Sobrenome</th>
-        <th>Telefone</th>
-        <th>Categoria</th>
+        <th>Produto</th>
+        <th>Tipo</th>
+        <th>Preço de Venda</th>
+        <th>Estoque</th>
     </tr>
     </thead>
     <tbody>
     {%for produto in produtos%}
     <tr>
-        <td>{{produto.id}}</td>
+        <td>{{produto.id_produto}}</td>
         <td>
-            <a href="{%url 'ver_produto' produto.id %}"> {{produto.nome}}</a>
+            <a href="{%url 'ver_produto' produto.id %}"> {{produto.nm_produto}}</a>
         </td>
-        <td>{{produto.sobrenome}}</td>
-        <td>{{produto.telefone}}</td>
-        <td>{{produto.categoria}}</td>
+        <td>{{produto.tipo}}</td>
+        <td>{{produto.preco_venda}}</td>
+        <td>{{produto.estoque}}</td>
     </tr>
     {%endfor%}
     </tbody>

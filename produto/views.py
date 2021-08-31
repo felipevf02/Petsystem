@@ -16,14 +16,14 @@ def index(request):
     })
 
 
-def ver_produto(request, nm_produto):
-    produto = get_object_or_404(Produto, id=nm_produto)
+def ver_produto(request, produto_id):
+    product = get_object_or_404(Produto, id_produto=produto_id)
 
     # if not produto.mostrar:
     #     raise Http404()
 
     return render(request, 'produto/ver_produto.html', {
-        'produto': produto
+        'product': product
     })
 
 

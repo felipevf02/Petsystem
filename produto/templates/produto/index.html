@@ -14,15 +14,15 @@
     </tr>
     </thead>
     <tbody>
-    {%for produto in produtos%}
+    {%for product in produto%}
     <tr>
-        <td>{{produto.id_produto}}</td>
+        <td>{{product.id_produto}}</td>
         <td>
-            <a href="{%url 'ver_produto' produto.id %}"> {{produto.nm_produto}}</a>
+            <a href="{%url 'ver_produto' product.id_produto %}"> {{product.nm_produto}}</a>
         </td>
-        <td>{{produto.tipo}}</td>
-        <td>{{produto.preco_venda}}</td>
-        <td>{{produto.estoque}}</td>
+        <td>{{product.tipo}}</td>
+        <td>{{product.preco_venda}}</td>
+        <td>{{product.estoque}}</td>
     </tr>
     {%endfor%}
     </tbody>

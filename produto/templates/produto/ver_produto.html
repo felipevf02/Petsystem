@@ -1,34 +1,52 @@
 {%extends 'base.html'%}
 
 {%block conteudo%}
-<h1 class="mt-5">{{produto.nome}} {{produto.sobrenome}}</h1>
+<h1 class="mt-5">{{product.nm_produto}}</h1>
 
-{%if produto.foto%}
-<p>
-    <img src="{{produto.foto.url}}" style="max-width: 250px; height: auto;"
-</p>
-{%endif%}
+<!--{%if produto.foto%}-->
+<!--<p>-->
+<!--    <img src="{{produto.foto.url}}" style="max-width: 250px; height: auto;"-->
+<!--</p>-->
+<!--{%endif%}-->
 
 <dl>
     <dt>ID</dt>
-    <dd>{{produto.id}}</dd>
+    <dd>{{product.id_produto}}</dd>
 
-    <dt>Telefone</dt>
-    <dd>{{produto.telefone}}</dd>
+    <dt>Produto</dt>
+    <dd>{{product.nm_produto}}</dd>
 
-    <dt>E-mail</dt>
-    <dd>{{produto.email}}</dd>
-
-    <dt>Data criação</dt>
-    <dd>{{produto.data_criacao|date:'d/m/y H:i:s'}}</dd>
-
-    <dt>Categoria</dt>
-    <dd>{{produto.categoria}}</dd>
+    <dt>Tipo</dt>
+    <dd>{{product.tipos}}</dd>
 
     <dt>Descrição</dt>
-    <dd>
-        {{produto.descricao}}
-    </dd>
+    <dd>{{product.descricao}}</dd>
+
+    <dt>Valor Unidade</dt>
+    <dd>{{product.vl_unidade}}</dd>
+
+    <dt>Unidade de Medida</dt>
+    <dd>{{product.unidade_medida}}</dd>
+
+    <dt>Preço do Fornecedor</dt>
+    <dd>{{product.preco_fornecedor}}</dd>
+
+    <dt>Preço de Venda</dt>
+    <dd>{{product.preco_venda}}</dd>
+
+    <dt>Estoque</dt>
+    <dd>{{product.estoque}}</dd>
+
+    <dt>Data de criação</dt>
+    <dd>{{product.created_at|date:'d/m/y H:i:s'}}</dd>
+
+    <dt>Data de Atualização</dt>
+    <dd>{{product.updated_at|date:'d/m/y H:i:s'}}</dd>
+
+    <dt>Criado por</dt>
+    <dd>{{product.created_by}}</dd>
+
+    <dt>Atualizado por</dt>
+    <dd>{{product.updated_by}}</dd>
 </dl>
 {%endblock%}
-      

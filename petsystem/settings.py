@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-afnrl0g1^%_niz2cva*7fm$)n79^&y)56libv@57$-(9i7izt-
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['django-env.eba-nuch2dte.us-east-1.elasticbeanstalk.com']
+ALLOWED_HOSTS = []
 
 # Application definition
 
@@ -63,10 +63,6 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
             ],
-            # 'loader': [
-            #     'django.template.loaders.filesystem.Loader',
-            #     'django.template.loader.app_directories.Loader',
-            # ]
         },
     },
 ]

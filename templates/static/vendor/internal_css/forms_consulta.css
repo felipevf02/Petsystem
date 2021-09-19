@@ -1,0 +1,62 @@
+/*------------------------- FOLHA DE ESTILO PARA PÁGINAS DE CONSULTA -----------------------------*/
+.consulta{
+  padding-right: 10px;
+  padding-left: 10px;
+}
+
+/*---------BOTAO------------------*/
+
+.botao1{
+  font-size: 11px;
+  text-decoration: none;
+  color: black;
+  text-transform: uppercase;
+  padding: 1px 5px;
+  border-radius: 7px;
+  background-color: #bdb8aa;
+}
+.botao1:hover{
+  background-color: rgba(255, 251, 0, 1);
+}
+.botao2{
+  font-size: 11px;
+  text-decoration: none;
+  color: black;
+  text-transform: uppercase;
+  padding: 1px 5px;
+  border-radius: 7px;
+  background-color: #bdb8aa;
+}
+.botao2:hover{
+  background-color: rgba(211, 9, 9, 0.678);
+}
+/*-------------------------------------------------------------------*/
+
+/*---------FORMULARIO CONSULTA-----------*/
+.texto-lista{
+  text-align: center;
+}
+
+.categoria{
+  background-color: #b0aeae;
+  text-transform: uppercase;
+}
+
+.table-cons{
+  margin: 60px auto;
+  text-align: center;
+  border: 1px solid black;
+  table-layout: auto;
+}
+.table-cons tr th{
+  padding: 5px 10px;
+}
+.table-cons tr th td{
+  padding: 5px 10px;
+}
+
+.table-cons tr:hover{
+  background-color: rgba(52, 185, 225, 1);
+  width: 10px 10px;
+}
+/*-------------------------------------------------------------------*/

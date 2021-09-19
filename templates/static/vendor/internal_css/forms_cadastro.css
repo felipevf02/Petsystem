@@ -1,0 +1,104 @@
+/*------------------------- FOLHA DE ESTILO PARA PÁGINAS DE CADASTRO -----------------------------*/
+
+/*--------- FORMULÁRIOS -----------*/
+
+.fechar_janela{
+    height: 32px;
+    color: red;
+    cursor: pointer;
+    margin-top: -30px;
+    text-align: end;
+    z-index: 3;
+}
+
+.fechar_janela > svg:hover, .formulario__botao:hover{
+    transform: scale(1.1);
+}
+
+.formulario {
+    background-color: whitesmoke;
+    margin-left: -15px;
+    margin-right: -15px;
+    padding: 40px 15px 10px 15px;
+    margin: auto;
+    box-shadow: 8px 8px 14px #989898;
+	border-radius: 0.8rem;
+	max-width: 70vw;
+}
+
+.formulario__campo {
+    width: 100%;
+    border: 1px solid #c4c4c4;
+    border-radius: 5px;
+	padding: 10px 5px;
+	text-transform: uppercase;
+}
+
+.formulario__campo:focus-visible{
+    border-color: tomato;
+}
+
+.formulario__label {
+    color: #343434;
+    white-space: nowrap;
+	text-overflow: ellipsis;
+	font-weight: bold;
+}
+
+legend::after, legend::before{
+	content: " | ";
+	font-weight: bold;
+}
+
+.formulario__botao {
+    border: 3px solid #0d6aff;
+    border-radius: 300px;
+    background-color: white;
+    color: #0d6aff;
+    padding: 5px 20px;
+    cursor: pointer;
+    display: block;
+    margin: 0 auto;
+    font-weight: bold;
+    position: relative;
+    font-size: 20px;
+    height: 40px;
+    top: -20px;
+}
+
+fieldset{
+    border-radius: 0.8rem;
+	border:3px solid #989898;
+	padding: 20px;
+    /* overflow: scroll; */
+}
+
+.grupo-itens{
+    width: 100%;
+    margin: 0 5px 15px;
+}
+
+@media (min-width: 768px) {
+    .formulario{
+        min-height: 500px;
+        min-width: 500px;
+    }
+    .formulario__grupo {
+        float: left;
+        width: 100%;
+        display: flex;
+        margin-bottom: 15px;
+    }
+
+    .formulario__grupo--coluna-esq {
+        display: flex;
+        width: 50%;
+        scroll-padding-right: 15px;
+    }
+
+    .formulario__grupo--coluna-dir {
+        width: 50%;
+        scroll-padding-left: 15px;
+    }
+}
+/*-------------------------------------------------------------------*/

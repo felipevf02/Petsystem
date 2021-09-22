@@ -9,18 +9,14 @@
         <legend style="text-shadow: 1px 1px 3px black;">CADASTRAR PRODUTO</legend>
         <div class="formulario__grupo formulario__grupo--coluna-esq">
             <div class="grupo-itens">
-                <label class="formulario__label" for="identificador">#ID</label>
-                <input class="formulario__campo" type="number" name="identificador" min="0" disabled style="cursor: not-allowed;">
-            </div>
-            <div class="grupo-itens">
                 <label class="formulario__label" for="prod">PRODUTO</label>
-                <input class="formulario__campo" type="text" name="prod">
+                <input class="formulario__campo" type="text" name="prod" required>
             </div>
         </div>
         <div class="formulario__grupo formulario__grupo--coluna-dir">
             <div class="grupo-itens">
                 <label class="formulario__label" for="tipo">TIPO</label>
-                <input class="formulario__campo" type="text" name="tipo">
+                <input class="formulario__campo" type="text" name="tipo" required>
             </div>
         </div>
         <div class="formulario__grupo">  
@@ -32,17 +28,17 @@
         <div class="formulario__grupo formulario__grupo--coluna-esq">
             <div class="grupo-itens">
                 <label class="formulario__label" for="identificador">VOLUME</label>
-                <input class="formulario__campo" type="number" name="identificador" min="0.0" step="0.1">
+                <input class="formulario__campo" type="number" name="identificador" min="0.0" step="0.1" required>
             </div>
             <div class="grupo-itens">
                 <label class="formulario__label" for="prod">UNIDADE</label>
-                <input class="formulario__campo" type="text" name="prod">
+                <input class="formulario__campo" type="text" name="prod" required>
             </div>
         </div>
         <div class="formulario__grupo formulario__grupo--coluna-dir">
             <div class="grupo-itens">
                 <label class="formulario__label" for="identificador">PREÇO DO FORNECEDOR</label>
-                <input class="formulario__campo" type="number" name="identificador" min="0.0" step="0.1">
+                <input class="formulario__campo" type="number" name="identificador" min="0.0" step="0.1" required>
             </div>
             <div class="grupo-itens">
                 <label class="formulario__label" for="prod">PREÇO DE VENDA</label>

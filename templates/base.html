@@ -17,8 +17,6 @@
     <!-- Page Content -->
         <div class="pages">
             <main id="container">
-                <!-- {%include 'cadastros/form_product.html'%} -->
-                <!-- {%include 'consultas/table_product.html'%} -->
             </main>
             {%include 'parciais/default.html'%}
             <footer>Copyright © 2021 A.Z.X. Consultoria</footer>
@@ -57,7 +55,6 @@
         // FUNCTION TO SHOW THE LOAD SCREEN
         window.addEventListener('load', () => setTimeout(function(){
             $('#loader-wrapper').fadeOut("fast");
-            //document.getElementById('loader-wrapper').classList.remove('active');
         }, 1000));
 
         // FUNCTION TO RESIZE THE PAGE WHEN SIDEBAR IS OPEN/HIDE
@@ -71,17 +68,97 @@
 
         // FUNCTION TO OPEN THE PAGES ACCORDING MENU SELECTION
         function openPage(operation){
-            const main_page = document.getElementById('container');
+            $('#standby').addClass('blur');
             switch (operation){
                 case 1:
-                    //main_page.innerHTML = '<object type="text/html" data="form_user.html"></object>'; NOT WORKING OPT1
+                    $.ajax({
+                        url: "/cad_user",
+                        type: "GET",
+                        success: function(data){
+                            $("#container").html(data);
+                        }
+                    })
                 break;
                 case 2:
-                    // NOT WORKING OPT2
-                    // $.post("#### INSERT THE FILE PATH HERE ####", function(result){
-                    //     $("#container").html(result);
-                    // })
-                    //main_page.innerHTML = '<object type="text/html" data="form_product.html"></object>';
+                    $.ajax({
+                        url: "/cad_product",
+                        type: "GET",
+                        success: function(data){
+                            $("#container").html(data);
+                        }
+                    })
+                break;
+                case 3:
+                    $.ajax({
+                        url: "/cad_forn",
+                        type: "GET",
+                        success: function(data){
+                            $("#container").html(data);
+                        }
+                    })
+                break;
+                case 4:
+                    $.ajax({
+                        url: "/cad_entrada",
+                        type: "GET",
+                        success: function(data){
+                            $("#container").html(data);
+                        }
+                    })
+                break;
+                case 5:
+                    $.ajax({
+                        url: "/cad_saida",
+                        type: "GET",
+                        success: function(data){
+                            $("#container").html(data);
+                        }
+                    })
+                break;
+                case 6:
+                    $.ajax({
+                        url: "/cons_user",
+                        type: "GET",
+                        success: function(data){
+                            $("#container").html(data);
+                        }
+                    })
+                break;
+                case 7:
+                    $.ajax({
+                        url: "/cons_product",
+                        type: "GET",
+                        success: function(data){
+                            $("#container").html(data);
+                        }
+                    })
+                break;
+                case 8:
+                    $.ajax({
+                        url: "/cons_forn",
+                        type: "GET",
+                        success: function(data){
+                            $("#container").html(data);
+                        }
+                    })
+                break;
+                case 9:
+                    $.ajax({
+                        url: "/cons_entrada",
+                        type: "GET",
+                        success: function(data){
+                            $("#container").html(data);
+                        }
+                    })
+                break;
+                case 10:
+                    $.ajax({
+                        url: "/cons_saida",
+                        type: "GET",
+                        success: function(data){
+                            $("#container").html(data);
+                        }
+                    })
                 break;
                 default:
                     console.log('Nenhuma Página Aberta');
@@ -93,16 +170,18 @@
             obj.remove();
             modal = document.getElementById('concluded');
             modal.classList.add('active');
+            $('#standby').removeClass('blur');
             setTimeout(function(){
                 modal.classList.remove('active');
-            }, 3000)
+            }, 2000)
         }
 
         // FUNCTION TO SHOW MODAL FAILED
         function operacaoAbortada(obj){
-            obj.parentElement.remove()
-            modal = document.getElementById('aborted')
+            obj.parentElement.remove();
+            modal = document.getElementById('aborted');
             modal.classList.add('active');
+            $('#standby').removeClass('blur');
             setTimeout(function(){
                 modal.classList.remove('active');
             }, 3000)

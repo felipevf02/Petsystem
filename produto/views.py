@@ -16,16 +16,41 @@ def index(request):
     })
 
 
-def ver_produto(request, produto_id):
-    product = get_object_or_404(Produto, id_produto=produto_id)
+def form_user(request):
+    return render(request, 'cadastros/form_users.html', {
+})
+def form_product(request):
+    return render(request, 'cadastros/form_product.html', {
+})
+def form_forn(request):
+    return render(request, 'cadastros/form_forn.html', {
+})
+def form_entrada(request):
+    return render(request, 'cadastros/form_entrada.html', {
+})
+def form_saida(request):
+    return render(request, 'cadastros/form_saida.html', {
+})
 
-    # if not produto.mostrar:
-    #     raise Http404()
+def table_user(request):
+    return render(request, 'consultas/table_users.html', {
+})
+def table_product(request):
+    return render(request, 'consultas/table_product.html', {
+})
+def table_forn(request):
+    return render(request, 'consultas/table_forn.html', {
+})
+def table_entrada(request):
+    return render(request, 'consultas/table_entrada.html', {
+})
+def table_saida(request):
+    return render(request, 'consultas/table_saida.html', {
+})
 
-    return render(request, 'produto/ver_produto.html', {
-        'product': product
-    })
-
+def signin(request):
+    return render(request, 'signin.html', {
+})
 
 def busca(request):
     termo = request.GET.get('termo')
@@ -33,12 +58,12 @@ def busca(request):
     if termo is None:
         raise Http404
 
-    campos = Concat('id_produto', Value(' '), 'nm_produto')
+    campos = Concat('nome', Value(' '), 'sobrenome')
 
     produtos = Produto.objects.annotate(
         nome_completo=campos
     ).filter(
-        Q(nome_completo__icontains=termo) | Q(tipo__icontains=termo))
+        Q(nome_completo__icontains=termo) | Q(telefone__icontains=termo))
 
     # print(produtos.query)
     paginator = Paginator(produtos, 5)
@@ -49,6 +74,3 @@ def busca(request):
         'produtos': produtos
     })
 
-def signin(request):
-    return render(request, 'signin.html', {
-})

@@ -7,49 +7,40 @@
     </div>
     <fieldset>
         <legend style="text-shadow: 1px 1px 3px black;">CADASTRAR ENTRADA</legend>
-        <div class="formulario__grupo formulario__grupo--coluna-esq">
+        <div class="formulario__grupo formulario__grupo--coluna-esq" style="flex-direction: column; padding-right: inherit;">
             <div class="grupo-itens">
-                <label class="formulario__label" for="identificador">#ID</label>
-                <input class="formulario__campo" type="number" name="identificador" min="0" disabled style="cursor: not-allowed;">
+                <label class="formulario__label" for="forn">FORNECEDOR</label>
+                <select class="formulario__campo" name="forn" required size="1">
+                    {%for fornecedor in fornecedores%}
+                    <option value="{{fornecedor.id}}">{{fornecedor.nome}}</option>
+                    {%endfor%}
+                </select>
             </div>
             <div class="grupo-itens">
                 <label class="formulario__label" for="prod">PRODUTO</label>
-                <input class="formulario__campo" type="text" name="prod">
+                <select class="formulario__campo" name="prod" required size="1">
+                    {%for produto in produtos%}
+                    <option value="{{produto.id}}">{{produto.nome}}</option>
+                    {%endfor%}
+                </select>
             </div>
-        </div>
-        <div class="formulario__grupo formulario__grupo--coluna-dir">
             <div class="grupo-itens">
-                <label class="formulario__label" for="tipo">TIPO</label>
-                <input class="formulario__campo" type="text" name="tipo">
+                <label class="formulario__label" for="qtd">QUANTIDADE</label>
+                <input class="formulario__campo" type="number" name="qtd" required min="0">
+            </div>
+            <div class="formulario__grupo">  
+                <div class="grupo-itens">
+                    <label class="formulario__label" for="data">DATA</label>
+                    <input class="formulario__campo" type="date" name="data"></input>
+                </div>
             </div>
         </div>
-        <div class="formulario__grupo">  
+        <div class="formulario__grupo formulario__grupo--coluna-dir">  
             <div class="grupo-itens">
                 <label class="formulario__label" for="obs">DESCRIÇÃO</label>
-                <textarea class="formulario__campo" name="observacoes" rows="5" style="resize: vertical;"></textarea>
+                <textarea class="formulario__campo" name="observacoes" style="scroll-behavior: smooth; height: 254px; text-align: center;">{{produtos.descricao}}Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maxime error molestias aperiam unde iste quibusdam tempora maiores saepe minima nostrum labore, accusantium dicta natus! Dicta nisi animi facere accusantium. Perferendis. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Obcaecati ratione voluptatibus culpa suscipit porro repellendus expedita quidem nobis laudantium. Necessitatibus sequi esse repellendus consequatur, cupiditate impedit molestiae vel ex nisi.</textarea>
             </div>
         </div>
-        <div class="formulario__grupo formulario__grupo--coluna-esq">
-            <div class="grupo-itens">
-                <label class="formulario__label" for="identificador">VOLUME</label>
-                <input class="formulario__campo" type="number" name="identificador" min="0.0" step="0.1">
-            </div>
-            <div class="grupo-itens">
-                <label class="formulario__label" for="prod">UNIDADE</label>
-                <input class="formulario__campo" type="text" name="prod">
-            </div>
-        </div>
-        <div class="formulario__grupo formulario__grupo--coluna-dir">
-            <div class="grupo-itens">
-                <label class="formulario__label" for="identificador">PREÇO DO FORNECEDOR</label>
-                <input class="formulario__campo" type="number" name="identificador" min="0.0" step="0.1">
-            </div>
-            <div class="grupo-itens">
-                <label class="formulario__label" for="prod">PREÇO DE VENDA</label>
-                <input class="formulario__campo" type="text" name="prod">
-            </div>
-        </div>
-        
     </fieldset>
     <input type="submit" class="formulario__botao" value="CADASTRAR">
 </form>

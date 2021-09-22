@@ -9,47 +9,28 @@
         <legend style="text-shadow: 1px 1px 3px black;">CADASTRAR FORNECEDOR</legend>
         <div class="formulario__grupo formulario__grupo--coluna-esq">
             <div class="grupo-itens">
-                <label class="formulario__label" for="identificador">#ID</label>
-                <input class="formulario__campo" type="number" name="identificador" min="0" disabled style="cursor: not-allowed;">
-            </div>
-            <div class="grupo-itens">
-                <label class="formulario__label" for="prod">PRODUTO</label>
-                <input class="formulario__campo" type="text" name="prod">
+                <label class="formulario__label" for="nm_forn">NOME DO FORNECEDOR</label>
+                <input class="formulario__campo" type="text" name="nm_forn" required>
             </div>
         </div>
         <div class="formulario__grupo formulario__grupo--coluna-dir">
             <div class="grupo-itens">
-                <label class="formulario__label" for="tipo">TIPO</label>
-                <input class="formulario__campo" type="text" name="tipo">
-            </div>
-        </div>
-        <div class="formulario__grupo">  
-            <div class="grupo-itens">
-                <label class="formulario__label" for="obs">DESCRIÇÃO</label>
-                <textarea class="formulario__campo" name="observacoes" rows="5" style="resize: vertical;"></textarea>
+                <label class="formulario__label" for="cnpj">CNPJ</label>
+                <input class="formulario__campo" type="text" name="cnpj" required>
             </div>
         </div>
         <div class="formulario__grupo formulario__grupo--coluna-esq">
             <div class="grupo-itens">
-                <label class="formulario__label" for="identificador">VOLUME</label>
-                <input class="formulario__campo" type="number" name="identificador" min="0.0" step="0.1">
-            </div>
-            <div class="grupo-itens">
-                <label class="formulario__label" for="prod">UNIDADE</label>
-                <input class="formulario__campo" type="text" name="prod">
-            </div>
+                <label class="formulario__label" for="telefone">TELEFONE PARA CONTATO</label>
+                <input class="formulario__campo" type="text" name="telefone" required>
+            </div> 
         </div>
         <div class="formulario__grupo formulario__grupo--coluna-dir">
             <div class="grupo-itens">
-                <label class="formulario__label" for="identificador">PREÇO DO FORNECEDOR</label>
-                <input class="formulario__campo" type="number" name="identificador" min="0.0" step="0.1">
-            </div>
-            <div class="grupo-itens">
-                <label class="formulario__label" for="prod">PREÇO DE VENDA</label>
+                <label class="formulario__label" for="prod">RESPONSÁVEL</label>
                 <input class="formulario__campo" type="text" name="prod">
             </div>
         </div>
-        
     </fieldset>
     <input type="submit" class="formulario__botao" value="CADASTRAR">
 </form>
